@@ -1,0 +1,157 @@
+* {
+	margin: 0;
+	padding: 0;
+
+}
+
+body {
+	font-family: "Roboto", sans-serif;
+	font-size: 15px;
+	line-height: 1.5em;
+	color: black;
+}
+
+
+/* Page Header */
+
+#page-header {
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+	font-weight: bold;
+	line-height: 1em;
+}
+
+#page-header h1, h3 {
+	color: white;
+	padding: 1em 0 0 0;
+}
+
+#page-header p {
+	color: white;
+	padding: 6em 0 0.5em 0;
+}
+
+
+body.page-overview .header1 {
+	background-image: url(../images/main2.jpg);
+	background-size: cover;	
+}
+
+.header2 {
+	background-color: #EFEBE5;
+}
+
+.header3 {
+	background-image: url(../images/quote.jpg);
+}
+
+
+/* Podcast */
+
+#podcast .player-controls {
+	display: none;
+}
+
+body.js #podcast .player-controls {
+	display: block;
+}
+
+body.js #podcast .player-controls a {
+	display: inline-block;
+	background-color: white;
+	color: #623E2A;
+	text-decoration: none;
+	margin: 3em 0 3em 0;
+	padding: 0.3em 1em;
+}
+
+body.js #podcast .player-controls a:last-child {
+	display: none;
+}
+
+body.js #podcast .player-controls a:hover {
+	background-color: transparent;
+}
+
+body.js #podcast .player-controls.playing a:first-child {
+	background-color: transparent;
+	display: none;
+}
+
+body.js #podcast .player-controls.playing a:last-child {
+	background-color: transparent;
+	display: block;
+}
+
+#audio {
+	display: none;
+}
+
+
+/* What We Do Page */
+
+.whatwedo h2 {
+	color: #623E2A;
+	text-align: center;
+	padding: 1.5em 0em 0em 0em;
+}
+
+#what-we-do-page div h3 {
+	color: #623E2A;
+	text-align: center;
+}
+
+#what-we-do-page div p {
+	color: #623E2A;
+	text-align: center;
+}
+
+#what-we-do-page div:hover {
+	color: #ffaa5b;
+}
+
+#what-we-do-page {
+	display: flex;
+	flex-flow: column wrap;
+	padding: 2em;
+}
+
+#what-we-do-page div{
+	width: 30%;
+	text-align: center;
+}
+
+.whatwedo-list div img {
+	width: 100%;
+	height: 50%;
+	object-fit: cover;
+}
+
+
+@media only screen and (min-width: 900px) {
+
+	body {
+		font-size: 16px;
+		line-height: 1.5em;
+	}
+
+	/* Page Header */
+
+	#page-header {
+		min-height: 80vh;
+	}
+
+	#page-header {
+		text-align: center;
+		font-size: 2em;
+		font-weight: bold;
+	}
+
+	/* What We Do Page */
+	
+	#what-we-do-page {
+		flex-flow: row nowrap;
+		justify-content: space-around;
+	}
+}
