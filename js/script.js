@@ -46,7 +46,8 @@ const getNextSong = () => {
   fetch(urlWithParams, requestOptions)
     .then(response => response.json())
     .then(data => {
-      const records = data.result.records[currentRecordIndex]; // Access the current record in the records array
+      // Access the current record in the records array
+      const records = data.result.records[currentRecordIndex]; 
       const bird_song_url_full = records.URL;
       const bird_song_url = bird_song_url_full.split(";")[0] + ".mp3";
 
@@ -57,7 +58,8 @@ const getNextSong = () => {
       sourceElement.setAttribute("src", bird_song_url);
       audioElement.load();
 
-      currentRecordIndex++; // Increment the index for the next song
+      // Increment the index for the next song
+      currentRecordIndex++; 
     })
     .catch(error => console.log('error', error));
 };
