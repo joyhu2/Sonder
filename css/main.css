@@ -1,0 +1,349 @@
+* {
+	margin: 0;
+	padding: 0;
+
+}
+
+body {
+	font-family: 'Playfair Display', serif;
+	color: white;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Navigation Bar */
+#main-nav {
+    background-color: transparent; /* No background for a cleaner look */
+    padding: 1em 0;
+    position: fixed; /* Fixed position */
+    top: 0;
+    right: 0;
+    z-index: 1000;
+	margin-right: 3%;
+}
+
+#main-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Stack icons vertically */
+}
+
+#main-nav li {
+    margin: 10px 0;
+}
+
+#main-nav a i {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+	transition: transform 0.3s ease; 
+}
+
+#main-nav a:hover i {
+	transform: scale(1.4);
+}
+
+#main-nav a.active i {
+	border-bottom: 2px solid white; /* Adds a white underline */
+    padding-bottom: 5px;
+}
+
+
+
+/* Page Section*/
+
+body > section {
+	background-size: cover;
+	background-position: center center;
+	text-align: center;
+	font-weight: bold;
+	line-height: 1em;
+	padding: 5em 0;
+}
+
+body > section a,p {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 300;
+	font-size: 1em;
+}
+
+/* Page Section 1 */
+
+.section1 {
+	position: relative;
+	background-image: url(../images/main2.jpg);
+	background-size: cover;	
+	overflow: hidden;
+}
+
+.section1 h1 {
+	font-weight: 600;
+	font-size: 3em;
+	padding: 1em 0 0.5em 0;
+}
+
+.section1 h3 {
+	font-weight: 400;
+	padding: 0 0 0.5em 0;
+}
+
+/* Page Section 2 */
+
+.section2 {
+	background-color: #EFEBE5;
+	color: #623E2A;
+}
+
+.section2 h3 {
+	font-family: 'Poppins', sans-serif;
+	font-weight: 400;
+	font-size: smaller;
+	margin-bottom: 0.5em;
+}
+
+.section2 p {
+	font-size: 0.5em;
+}
+
+.section2 div img {
+	width: 100%;
+	height: 60%;
+	margin: 1em 0;
+	object-fit: cover;
+}
+
+/* More info about birds */
+
+.learn-more {
+    cursor: pointer;
+    color: #000; 
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+/* Page Section 3 */
+
+.section3 {
+	background-image: url(../images/quote.jpg);
+	background-position: center center;
+}
+
+.section3 p {
+	text-align: left;
+	font-size: 0.6em;
+}
+
+/* Gallery of Section 2 and Section 3 */
+
+.gallery {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center; 
+	align-items: center;
+	padding: 2em;
+}
+
+.gallery div{
+	width: 30%;
+	height: 20em;
+	text-align: center;
+	transition: transform 0.3s ease;
+}
+
+.gallery div:hover {
+	cursor: pointer;
+	transform: translateY(-10px);
+}
+
+/* Podcast */
+
+#podcast .player-controls {
+	display: none;
+	position: relative; 
+    z-index: 2; 
+}
+
+body.js #podcast .player-controls {
+	display: block;
+}
+
+body.js #podcast .player-controls a {
+	display: block;
+	transition: transform 0.3s ease;
+}
+
+body.js #podcast .player-controls a {
+	display: inline-block;
+	background-color: white;
+	color: #623E2A;
+	text-decoration: none;
+	font-size: small;
+	margin-top: 4em;
+	padding: 0.3em 4em;
+}
+
+body.js #podcast .player-controls a:last-child {
+	display: none;
+}
+
+body.js #podcast .player-controls a:hover {
+	background-color: #EFEBE5;
+	transform: scale(1.1);
+}
+
+body.js #podcast .player-controls.playing a:first-child {
+	display: none;
+}
+
+body.js #podcast .player-controls.playing a:last-child {
+	display: inline-block;
+}
+
+#audio {
+	display: none;
+}
+
+/* Page Footer */
+
+#page-footer h2, label {
+	color: black;
+}
+
+#page-footer {
+	background-color: #EFEBE5;
+	padding: 1.5em;
+}
+
+#secondary-menu {
+	padding-bottom: 1.5em;
+}
+
+#secondary-menu li {
+	list-style: none;
+}
+
+#secondary-menu a {
+	color: rgb(5, 5, 5);
+}
+
+#newsletter h2 {
+	font-size: 1em;
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+
+#newsletter label,
+#newsletter input[type=text],
+#newsletter button {
+	display: block;
+	margin-bottom: 5px;
+}
+
+#newsletter label {
+	font-size: 0.9em;
+}
+
+#newsletter input[type=text] {
+	border: 0;
+	background: #ddd;
+	padding: 0.5em 1em;
+	width: 120px;
+}
+
+#newsletter button {
+	border: 0;
+	padding: 0.5em 1em;
+	background: black;
+	color: white;
+	cursor: pointer;
+}
+
+#newsletter button:hover {
+	background-color: #623E2A;
+}
+
+input[type=text], input[type=number], textarea {
+    box-shadow: rgba(0,0,0,0.15) 3px 3px 5px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px 15px;
+    width: 100%;
+    font-size: 0.9em;
+}
+
+input[type=text]:focus, input[type=number]:focus {
+    border-color: #2cb5e8;
+}
+
+
+@media only screen and (min-width: 900px) {
+
+	#main-nav a i {
+		font-size: 24px;
+	}
+
+	/* Page Section */
+	
+	.section1, .section2, .section3 {
+		min-height: 50vh;
+		text-align: center;
+		font-size: 2em;
+	}	
+
+	/* Gallery of Section 2 and Section 3 */
+	
+	.gallery {
+		flex-flow: row nowrap;
+		justify-content: space-around;
+	}
+
+	/* Page Footer */
+
+	#page-footer {
+		display: flex;
+		padding: 1.5em 3em;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	#secondary-menu, #newsletter {
+		width: 50%;
+	}
+
+	#secondary-menu {
+		padding: 0;
+	}
+
+	#secondary-menu ul {
+		display: flex;
+	}
+
+	#secondary-menu li {
+		padding: 0;
+		padding-right: 1.5em;
+	}
+
+	#newsletter {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		flex-wrap: wrap;
+		text-align: right;
+	}
+
+	#newsletter label,
+	#newsletter input[type=text],
+	#newsletter button {
+		margin: 0;
+		margin-left: 1em;
+	}
+}

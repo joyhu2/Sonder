@@ -9,12 +9,25 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="css/style.css">
+		<link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/drop.css">
 	</head>
 
 	<body>
 
-		<section class="section1">
+		<!-- Navigation Bar -->
+		<nav id="main-nav">
+			<ul>
+				<li><a href="#section1" title="Bird Song"><i class="fa-solid fa-headphones"></i></a></li>
+				<li><a href="#section2" title="Today's Birds"><i class="fa-solid fa-feather-pointed"></i></a></li>
+				<li><a href="#section3" title="Quotes About Birds"><i class="fas fa-quote-right"></i></a></li>
+    		</ul>
+		</nav>	
+
+		<!-- Section 1 Bird Song -->
+		<section id="section1" class="section1">
+
+			<div class="drop"></div>
 
 			<p>WELCOME TO</p>
 			<h1>Bird Song Today</h1>
@@ -32,9 +45,11 @@
 				</audio>
 			</section>
 
+			<div class="wave"></div>
 		</section>
 
-		<section class="section2">
+		<!-- Section 2 Today's Birds -->
+		<section id="section2" class="section2">
 			
 			<h2>Today's Birds</h2>
 			
@@ -43,26 +58,36 @@
 				<div>
 					<img src="images/today1.jpg" alt="Bird name">
 					<h3>Bird name</h3>
-					<p>learn more</p>
+					<p class="learn-more">learn more</p>
+					<p class="more-info" style="display: none;">
+						Here is more information about this bird...
+					</p>
 				</div>
 	
 				<div>
 					<img src="images/today2.jpg" alt="Bird name">
 					<h3>Bird name</h3>
-					<p>learn more</p>
+					<p class="learn-more">learn more</p>
+					<p class="more-info" style="display: none;">
+						Here is more information about this bird...
+					</p>
 				</div>
 	
 				<div>
 					<img src="images/today3.jpg" alt="Bird name">
 					<h3>Bird name</h3>
-					<p>learn more</p>
+					<p class="learn-more">learn more</p>
+					<p class="more-info" style="display: none;">
+						Here is more information about this bird...
+					</p>
 				</div>
 	
 			</section>
 
 		</section>
 
-		<section class="section3">
+		<!-- Section 3 Quotes About Birds -->
+		<section id="section3" class="section3">
 
 			<h2>Quotes About Birds</h2>
 
@@ -95,8 +120,40 @@
 			</section>
 
 		</section>
-		
-        <script src="js/script.js"></script>
 
+		<!-- Footer -->
+		<footer id="page-footer">
+			
+			<nav id="secondary-menu">
+				<ul>
+					<li>
+						<a href="#">Contact Us</a>
+					</li>
+					<li>
+						<a href="#">Privacy Policy</a>
+					</li>
+					<li>
+						<a href="#">Copyright</a>
+					</li>
+				</ul>
+			</nav>
+
+			<!-- Newsletter -->
+			<form id="newsletter" method="get" action="#">
+
+				<h2>Subscribe to Our Newsletter</h2>
+
+				<label for="newsletter-email">Email Address: </label>
+				<input id="newsletter-email" type="email" placeholder="A valid email address" required>
+				<button type="submit">Subscribe</button>
+				
+			</form>
+
+		</footer>
+		
+        <script src="js/main.js"></script>
+		<script src="https://kit.fontawesome.com/eb09cc8c68.js" crossorigin="anonymous"></script>
+		<script src="js/bird_infos.js"></script>
+		<script src="js/newsletter.js"></script>
 	</body>
 </html>
