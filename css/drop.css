@@ -1,0 +1,178 @@
+:root {
+  --time: 4.5s;
+}
+
+div.drop,.wave {
+  margin: 100px auto;
+}
+  
+.drop {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: -150px;
+    left: 50%;
+    margin: 0 auto;
+    background: #fff;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    -moz-animation-name: drip;
+    -webkit-animation-name: drip;
+    animation-name: drip;
+    -moz-animation-timing-function: cubic-bezier(1, 0, 0.91, 0.19);
+    -webkit-animation-timing-function: cubic-bezier(1, 0, 0.91, 0.19);
+    animation-timing-function: cubic-bezier(1, 0, 0.91, 0.19);
+    -moz-animation-duration: var(--time);
+    -webkit-animation-duration: var(--time);
+    animation-duration: var(--time);
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    transform: translateX(-50%);
+}
+  
+.drop:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 30px solid rgba(255, 255, 255, 1);
+    top: -22px;
+    left: 50%;  /* Center the triangle's left edge to the circle's center */
+    transform: translateX(-50%);
+}
+  
+.wave {
+    z-index: 1;
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    width: 2px;
+    height: 1px;
+    left: 50%;
+    border: #fff 7px solid;
+    -moz-border-radius: 300px / 150px;
+    -webkit-border-radius: 300px / 150px;
+    border-radius: 300px / 150px;
+    -moz-animation-name: ripple;
+    -webkit-animation-name: ripple;
+    animation-name: ripple;
+    -moz-animation-delay: var(--time);
+    -webkit-animation-delay: var(--time);
+    animation-delay: var(--time);
+    -moz-animation-duration: var(--time);
+    -webkit-animation-duration: var(--time);
+    animation-duration: var(--time);
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    transform: translateX(-50%);
+    -moz-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+  
+.wave:after {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    opacity: 0;
+    top: -5px;
+    width: 2px;
+    height: 1px;
+    border: #fff 5px solid;
+    -moz-border-radius: 300px / 150px;
+    -webkit-border-radius: 300px / 150px;
+    border-radius: 300px / 150px;
+    -moz-animation-name: ripple-2;
+    -webkit-animation-name: ripple-2;
+    animation-name: ripple-2;
+    -moz-animation-duration: var(--time);
+    -webkit-animation-duration: var(--time);
+    animation-duration: var(--time);
+    -moz-animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    transform: translateX(-50%);
+}
+
+@keyframes ripple {
+  from {
+      opacity: 1;
+      width: 2px;
+      height: 1px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  to {
+      width: 600px;
+      height: 300px;
+      border-width: 1px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+  }
+}
+
+@keyframes ripple-2 {
+  0% {
+      opacity: 1;
+      width: 2px;
+      height: 1px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+  50% {
+      opacity: 0;
+  }
+  100% {
+      width: 200px;
+      height: 100px;
+      border-width: 1px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes drip {
+  to {
+    top: 190px;
+  }
+}
+  
+/*@keyframes ripple {
+    from {
+      opacity: 1;
+    }
+    to {
+      width: 600px;
+      height: 300px;
+      border-width: 1px;
+      top: -100px;
+      opacity: 0;
+    }
+}
+  
+@keyframes ripple-2 {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      width: 200px;
+      height: 100px;
+      border-width: 1px;
+      top: 100px;
+      left: 200px;
+    }
+}*/
+  

@@ -26,8 +26,8 @@ document.addEventListener("readystatechange", function(event) {
 const baseUrl = 'https://data.gov.au/data/api/3/action/datastore_search';
 
 const queryParams = {
-    resource_id: 'ef2c8a26-efc6-4f57-8149-7ea2ad75ce3a',
-	limit: 1
+  resource_id: 'ef2c8a26-efc6-4f57-8149-7ea2ad75ce3a',
+	limit: 100
 };
 
 const queryString = new URLSearchParams(queryParams).toString();
@@ -71,3 +71,30 @@ getNextSong();
 document.getElementById("audio").addEventListener("ended", () => {
   getNextSong(); // Fetch and play the next song
 });
+
+let currentRecordIndex_1 = 0;
+
+fetch(urlWithParams, requestOptions)
+  .then(response => response.json())
+  .then(data => {
+      // Access the current record in the records array
+    const records = data.result.records[currentRecordIndex_1]; 
+    const birdNamesString = records['Subjectheadings:Topical'];
+    const birdNamesArray = birdNamesString.split(';');
+
+    const defaultBirdNames = ['Default Bird 1', 'Default Bird 2', 'Default Bird 3'];
+
+    const h3Elements = document.querySelectorAll('.gallery h3');
+
+    for (let i = 0; i < h3Elements.length; i++) {
+      if (birdNamesArray[i + 3]) { // +2 because we start from the third item
+          h3Elements[i].textContent = birdNamesArray[i + 3];
+      } else {
+          h3Elements[i].textContent = defaultBirdNames[i];
+      }
+    }
+
+      // Increment the index for the next song
+    currentRecordIndex_1++; 
+})
+.catch(error => console.log('error', error));

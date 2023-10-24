@@ -30,6 +30,7 @@ body > section a,p {
 /* Page Section 1 */
 
 .section1 {
+	position: relative;
 	background-image: url(../images/main2.jpg);
 	background-size: cover;	
 }
@@ -102,6 +103,8 @@ body > section a,p {
 
 #podcast .player-controls {
 	display: none;
+	position: relative; /* Required for z-index to take effect */
+    z-index: 2; /* Any value higher than the wave's z-index */
 }
 
 body.js #podcast .player-controls {
